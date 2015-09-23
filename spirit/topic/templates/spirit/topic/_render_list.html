@@ -1,0 +1,44 @@
+{% load spirit_tags i18n %}
+
+{# topic list #}
+        <div class="rows">
+
+        {% for t in topics %}
+			<div class="row">
+
+                <div class="row-title">
+                    {% if t.is_pinned or t.is_globally_pinned %}
+                        <i class="fa fa-thumb-tack"></i>
+                    {% endif %}
+                    {% if t.is_closed %}
+                        <i class="fa fa-lock"></i>
+                    {% endif %}
+
+                    {% if t.bookmark %}
+                       <a class="row-link" href="{{ t.bookmark.get_absolute_url }}">{{ t.title }}</a>
+                    {% else %}
+                        <a class="row-link" href="{{ t.get_absolute_url }}">{{ t.title }}</a>
+                    {% endif %}
+                </div>
+                <div class="row-info">
+                    <div>
+                        {% if show_subcategory %}
+                            <a href="{{ t.category.get_absolute_url }}">{{ t.category.title }}</a>
+                        {% else %}
+                            {% if t.category.parent %}
+                                <a href="{{ t.category.parent.get_absolute_url }}">{{ t.category.parent.title }}</a>
+                            {% else %}
+                                <a href="{{ t.category.get_absolute_url }}">{{ t.category.title }}</a>
+                            {% endif %}
+                        {% endif %}
+                    </div><!--
+                 --><div><i class="fa fa-comment"></i> {{ t.comment_count }}</div><!--
+                 --><div title="{{ t.last_active }}"><i class="fa fa-clock-o"></i> {{ t.last_active|shortnaturaltime }}</div>
+                </div>
+
+			</div>
+        {% empty %}
+            <p>{% trans "There are no topics here, yet" %}</p>
+        {% endfor %}
+
+		</div>

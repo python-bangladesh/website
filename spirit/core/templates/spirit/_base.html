@@ -1,0 +1,87 @@
+{% load spirit_tags i18n %}
+{% load static from staticfiles %}
+<!doctype html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+
+    <title>{% block title %}{% endblock %} - {{ config.site_name }}</title>
+    <meta name="description" content="{{ config.site_description }}">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+	<link rel="stylesheet" href="{% static "spirit/stylesheets/vendors/font-awesome.min.css" %}">
+    <link rel="stylesheet" href="{% static "spirit/stylesheets/vendors/github.min.css" %}">
+    <link rel="stylesheet" href="{% static "spirit/stylesheets/vendors/jquery.atwho.min.css" %}">
+    <link rel="stylesheet" href="{% static "spirit/stylesheets/styles.css" %}">
+
+    <script src="{% static "spirit/scripts/vendors/jquery.min.js" %}"></script>
+    <script src="{% static "spirit/scripts/vendors/highlightjs/highlight.min.js" %}"></script>
+    <script src="{% static "spirit/scripts/util.js" %}"></script>
+    <script src="{% static "spirit/scripts/tab.js" %}"></script>
+    <script src="{% static "spirit/scripts/postify.js" %}"></script>
+    <script src="{% static "spirit/scripts/social_share.js" %}"></script>
+
+    {% if user.is_authenticated %}
+        <script src="{% static "spirit/scripts/vendors/atwho/jquery.caret.min.js" %}"></script>
+        <script src="{% static "spirit/scripts/vendors/atwho/jquery.atwho.min.js" %}"></script>
+        <script src="{% static "spirit/scripts/vendors/marked/marked.min.js" %}"></script>
+        <script src="{% static "spirit/scripts/vendors/waypoints/waypoints.min.js" %}"></script>
+        <script src="{% static "spirit/scripts/store.js" %}"></script>
+        <script src="{% static "spirit/scripts/editor_image_upload.js" %}"></script>
+	    <script src="{% static "spirit/scripts/editor.js" %}"></script>
+        <script src="{% static "spirit/scripts/emoji_list.js" %}"></script>
+        <script src="{% static "spirit/scripts/like.js" %}"></script>
+        <script src="{% static "spirit/scripts/bookmark.js" %}"></script>
+        <script src="{% static "spirit/scripts/notification.js" %}"></script>
+    {% endif %}
+
+    {% if user.st.is_moderator %}
+        <script src="{% static "spirit/scripts/move_comments.js" %}"></script>
+    {% endif %}
+
+    <script>
+
+	$( document ).ready(function() {
+
+        $.tab();
+
+        $( 'a.js-post' ).postify( {
+            csrfToken: "{{ csrf_token }}",
+        } );
+
+        {% if user.is_authenticated %}
+            $.notification( {
+                notificationUrl: "{% url "spirit:topic:notification:index-ajax" %}",
+                notificationListUrl: "{% url "spirit:topic:notification:index-unread" %}",
+                mentionTxt: "{% trans "{user} has mention you on {topic}" %}",
+                commentTxt: "{% trans "{user} has commented on {topic}" %}",
+                showAll: "{% trans "Show all" %}",
+                empty: "{% trans "No new notifications, yet" %}",
+                unread: "{% trans "unread" %}",
+            } );
+        {% endif %}
+
+	});
+
+	</script>
+
+    {% block head-extra %}{% endblock %}
+
+    <!--[if (lt IE 9) & (!IEMobile)]>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/selectivizr/1.0.2/selectivizr-min.js"></script>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/html5shiv/3.6/html5shiv.min.js"></script>
+    <![endif]-->
+
+  </head>
+
+  <body>
+
+    {% include 'spirit/_header.html' %}
+    {% render_messages messages %}
+    {% block content %}{% endblock %}
+    {% include 'spirit/_footer.html' %}
+
+  </body>
+
+</html>
