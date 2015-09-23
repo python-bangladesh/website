@@ -2,4 +2,4 @@ venv
 db.sqlite3
 *.pyc
 pybd/local_settings.py
-static
+/static/

@@ -1,0 +1,44 @@
+.center {
+    text-align: center;
+}
+
+.left {
+    text-align: left;
+}
+
+.intro {
+    font-size: 24px;
+}
+
+.footer {
+    font-size: 16px;
+}
+
+.logo {
+    -webkit-border-radius: 10px;
+    -moz-border-radius: 10px;
+    border-radius: 10px;
+}
+
+.btn-facebook {
+    background: #43609C;
+    color: #ffffff;
+    border-color: #33466D
+}
+
+.btn-facebook:hover {
+
+    background-color: #43609C;
+    color: #ffffff;
+}
+
+.btn-pycon {
+    border-color: #CEAF23;
+    background: #FCDF5B;
+    color: #3771A2
+}
+
+.btn-pycon:hover {
+    background-color: #FCDF5B;
+    color: #3771A2
+}
