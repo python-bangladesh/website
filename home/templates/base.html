@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    <title>Python Bangladesh</title>
+
+    <!-- Bootstrap core CSS -->
+    <link href="{{ STATIC_URL }}bootstrap/css/lumen.min.css" rel="stylesheet">
+
+
+    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+    <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+      <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+    <![endif]-->
+
+
+    <style>
+        .center {
+            text-align: center;
+        }
+
+        .left {
+            text-align: left;
+        }
+
+        .intro {
+            font-size: 24px;
+        }
+
+        .footer {
+            font-size: 16px;
+        }
+
+
+    </style>
+</head>
+
+<body>
+
+<div class="container">
+
+    <br/>
+
+    <div class="center">
+        <a target="_blank" href="http://fb.pybd.org" class="btn btn-lg btn-success">facebook</a>
+        <a target="_blank" href="http://github.pybd.org" class="btn btn-lg btn-danger">github</a>
+        <a target="_blank" href="http://dhaka.pycon.org" class="btn btn-lg btn-default">pycon</a>
+        <a href="mailto:info@pybd.org" class="btn btn-lg btn-warning">email</a>
+
+    </div>
+    <br/>
+
+    <div class="row intro">
+
+        <div class="center">
+            <img src="{{ STATIC_URL }}images/logo.jpg" alt="logo"/>
+            <br/><br/>
+        </div>
+
+        <div class="left col-md-offset-1 col-md-10">
+            Python Bangladesh is the largest Python User Group from Bangladesh with over 6K+ registered members.
+            It is a platform for the python enthusiasts to learn, share and grow together. Our facebook group
+            "PyCharmers" is the center of our online activities. We also do offline meetups and arrange PyCons.
+        </div>
+
+
+    </div>
+
+    <br/>
+    <footer class="footer center">
+        <p>&copy; Python Bangladesh 2015</p>
+    </footer>
+
+</div>
+<!-- /container -->
+
+
+</body>
+</html>
