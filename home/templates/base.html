@@ -20,33 +20,8 @@
       <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
     <![endif]-->
 
+    <link href="{{ STATIC_URL }}css/home.css" rel="stylesheet">
 
-    <style>
-        .center {
-            text-align: center;
-        }
-
-        .left {
-            text-align: left;
-        }
-
-        .intro {
-            font-size: 24px;
-        }
-
-        .footer {
-            font-size: 16px;
-        }
-
-        .logo{
-            -webkit-border-radius: 10px;
-            -moz-border-radius: 10px;
-            border-radius: 10px;
-        }
-
-
-
-    </style>
 </head>
 
 <body>
@@ -56,9 +31,10 @@
     <br/>
 
     <div class="center">
-        <a target="_blank" href="http://fb.pybd.org" class="btn btn-lg btn-success">facebook</a>
-        <a target="_blank" href="http://github.pybd.org" class="btn btn-lg btn-danger">github</a>
-        <a target="_blank" href="http://dhaka.pycon.org" class="btn btn-lg btn-default">pycon</a>
+        <a target="_blank" href="http://fb.pybd.org" class="btn btn-lg btn-facebook">facebook</a>
+        <a target="_blank" href="http://github.pybd.org" class="btn btn-lg btn-default">github</a>
+        <a target="_blank" href="http://dhaka.pycon.org" class="btn btn-lg btn-pycon">pycon</a>
+        <a target="_blank" href="{% url 'spirit:index' %}" class="btn btn-lg btn-success">forum</a>
         <a href="mailto:info@pybd.org" class="btn btn-lg btn-warning">email</a>
 
     </div>
