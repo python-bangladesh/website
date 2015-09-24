@@ -23,8 +23,6 @@ def sender(request, subject, template_name, context, to):
     message = render_to_string(template_name, context)
     from_email = "Python Bangladesh <noreply@pybd.org>"
 
-    print(from_email)
-
     if len(to) > 1:
         kwargs = {'bcc': to, }
     else:
@@ -52,7 +50,7 @@ def send_email_change_email(request, user, new_email):
     template_name = 'spirit/user/email_change_email.html'
     token = UserEmailChangeTokenGenerator().generate(user, new_email)
     context = {'token': token, }
-    sender(request, subject, template_name, context, [user.email, ])
+    sender(request, subject, template_name, context, [new_email, ])
 
 
 def send_notification_email(request, topic_notifications, comment):
