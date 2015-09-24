@@ -33,7 +33,9 @@ ALLOWED_HOSTS = []
 # Application definition
 
 INSTALLED_APPS += [
-    'home'
+    'home',
+    'mptt',
+    'dpaste',
 ]
 
 MIDDLEWARE_CLASSES += (
@@ -74,6 +76,10 @@ USE_TZ = True
 
 STATIC_URL = '/static/'
 STATIC_ROOT = BASE_DIR + '/static/'
+
+DPASTE_BASE_URL = "http://pybd.org/pastes/"
+DPASTE_SITE_NAME = "PyBD Pastes"
+DPASTE_DEFAULT_GIST_NAME = "pybd.pastes.py"
 
 try:
     from local_settings import *

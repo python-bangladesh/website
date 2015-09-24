@@ -20,4 +20,6 @@ urlpatterns = [
     # url(r'^admin/', include(admin.site.urls)),
     url(r'^$', 'home.views.home', name='home'),
     url(r'^forum/', include('spirit.urls')),
+    url(r'^pastes/', include('dpaste.urls.dpaste', namespace='dpaste')),
+    url(r'pastes/api/', include('dpaste.urls.dpaste_api')),
 ]
