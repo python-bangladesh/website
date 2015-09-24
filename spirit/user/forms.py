@@ -43,12 +43,13 @@ class EmailCheckForm(EmailUniqueMixin, forms.Form):
 class EmailChangeForm(EmailUniqueMixin, forms.Form):
 
     email = forms.CharField(label=_("Email"), widget=forms.EmailInput, max_length=254)
-    password = forms.CharField(label=_("Password"), widget=forms.PasswordInput)
+    #password = forms.CharField(label=_("Password"), widget=forms.PasswordInput)
 
     def __init__(self, user=None, *args, **kwargs):
         self.user = user
         super(EmailChangeForm, self).__init__(*args, **kwargs)
 
+    """
     def clean_password(self):
         password = self.cleaned_data["password"]
 
@@ -56,6 +57,7 @@ class EmailChangeForm(EmailUniqueMixin, forms.Form):
             raise forms.ValidationError(_("The provided password is incorrect."))
 
         return password
+    """
 
 
 class UserForm(forms.ModelForm):
