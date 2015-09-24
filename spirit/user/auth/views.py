@@ -1,7 +1,9 @@
 # -*- coding: utf-8 -*-
 
+
 from __future__ import unicode_literals
 
+import hashlib, time
 from django.contrib import messages
 from django.contrib.auth.views import login as login_view, logout, password_reset
 from django.core.urlresolvers import reverse
@@ -42,8 +44,18 @@ def custom_logout(request, **kwargs):
     return render(request, 'spirit/user/auth/logout.html')
 
 
-#@ratelimit(field='email', rate='5/5m')
+# @ratelimit(field='email', rate='5/5m')
 def custom_password_reset(request, **kwargs):
+    user_model = get_user_model()
+    email = request.REQUEST.get('email', None)
+    if email:
+        users = user_model.objects.all().filter(email=email)
+        if users:
+            user = users[0]
+            if not user.has_usable_password():
+                user.set_password(hashlib.md5(email + str(time.time())).hexdigest())
+                user.save()
+
     """
     if request.method == "POST" and request.is_limited:
         return redirect(reverse("spirit:user:auth:password-reset"))
