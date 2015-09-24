@@ -42,10 +42,12 @@ def custom_logout(request, **kwargs):
     return render(request, 'spirit/user/auth/logout.html')
 
 
-@ratelimit(field='email', rate='5/5m')
+#@ratelimit(field='email', rate='5/5m')
 def custom_password_reset(request, **kwargs):
+    """
     if request.method == "POST" and request.is_limited:
         return redirect(reverse("spirit:user:auth:password-reset"))
+    """
 
     return password_reset(request, **kwargs)
 
