@@ -29,6 +29,10 @@ DEBUG = True
 
 ALLOWED_HOSTS = []
 
+AUTHENTICATION_BACKENDS += [
+    'social.backends.twitter.TwitterOAuth',
+    'social.backends.facebook.FacebookOAuth2',
+]
 
 # Application definition
 
@@ -36,6 +40,7 @@ INSTALLED_APPS += [
     'home',
     'mptt',
     'dpaste',
+    'social.apps.django_app.default'
 ]
 
 MIDDLEWARE_CLASSES += (
@@ -80,6 +85,13 @@ STATIC_ROOT = BASE_DIR + '/static/'
 DPASTE_BASE_URL = "http://pybd.org/pastes/"
 DPASTE_SITE_NAME = "PyBD Pastes"
 DPASTE_DEFAULT_GIST_NAME = "pybd.pastes.py"
+
+
+SOCIAL_AUTH_TWITTER_KEY = 'qAy6hpdfhO1gcCqgYovMUCni7'
+SOCIAL_AUTH_TWITTER_SECRET = 'b1VI1T4uicGQvir4k2XndjX6dbWWu8AlwDOeErZmq9KDHbc5rO'
+
+SOCIAL_AUTH_FACEBOOK_KEY = '1658783807701895'
+SOCIAL_AUTH_FACEBOOK_SECRET = 'b0ca13f7bb8709fa83e0ed57a3721c6f'
 
 try:
     from local_settings import *

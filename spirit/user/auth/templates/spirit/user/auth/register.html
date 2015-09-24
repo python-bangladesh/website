@@ -7,17 +7,31 @@
 {% block head-extra %}
     <script>
 
-	$( document ).ready(function() {
+        $(document).ready(function () {
 
-        $( "input[name=honeypot]" ).hide();
-        $( "label[for=id_honeypot]" ).hide();
+            $("input[name=honeypot]").hide();
+            $("label[for=id_honeypot]").hide();
 
-	});
+        });
 
-	</script>
+    </script>
 {% endblock %}
 
 {% block content %}
+
+
+    <h1 class="headline">Social Registration</h1>
+    <a href="{% url 'social:begin' 'facebook' %}">
+        <img height="50" width="50" src="http://icons.iconarchive.com/icons/danleech/simple/512/facebook-icon.png"/>
+    </a>
+
+    &nbsp;
+    &nbsp;
+
+    <a href="{% url 'social:begin' 'twitter' %}">
+        <img height="50" width="50" src="https://g.twimg.com/dev/documentation/image/Twitter_logo_blue_48.png"/>
+    </a>
+
 
     <h1 class="headline">{% trans "Register" %}</h1>
 
@@ -25,7 +39,7 @@
         {% csrf_token %}
         {% include "spirit/_form.html" %}
 
-        <input class="button" type="submit" name="post" value="{% trans "Register" %}" />
+        <input class="button" type="submit" name="post" value="{% trans "Register" %}"/>
     </form>
 
 {% endblock %}

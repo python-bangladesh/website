@@ -22,4 +22,5 @@ urlpatterns = [
     url(r'^forum/', include('spirit.urls')),
     url(r'^pastes/', include('dpaste.urls.dpaste', namespace='dpaste')),
     url(r'pastes/api/', include('dpaste.urls.dpaste_api')),
+    url('^social/', include('social.apps.django_app.urls', namespace='social'))
 ]

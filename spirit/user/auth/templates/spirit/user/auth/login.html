@@ -6,21 +6,38 @@
 
 {% block content %}
 
-    <h1 class="headline">{% trans "Login" %}</h1>
+    <h1 class="headline">Social Login</h1>
 
+    <a href="{% url 'social:begin' 'facebook' %}">
+        <img height="50" width="50" src="http://icons.iconarchive.com/icons/danleech/simple/512/facebook-icon.png"/>
+    </a>
+
+    &nbsp;
+    &nbsp;
+
+    <a href="{% url 'social:begin' 'twitter' %}">
+        <img height="50" width="50" src="https://g.twimg.com/dev/documentation/image/Twitter_logo_blue_48.png"/>
+    </a>
+
+
+
+    <h1 class="headline">Use Email</h1>
     <div class="login">
         <form action="." method="post">
             {% csrf_token %}
             {% include "spirit/_form.html" %}
 
-            <input class="button" type="submit" name="post" value="{% trans "Login" %}" />
+            <input class="button" type="submit" name="post" value="{% trans "Login" %}"/>
         </form>
     </div>
 
     <div class="login-links">
-		<a class="login-link" href="{% url "spirit:user:auth:register" %}">{% trans "Create an account" %}</a>
-		<a class="login-link" href="{% url "spirit:user:auth:password-reset" %}">{% trans "I don't know my password" %}</a>
-        <a class="login-link" href="{% url "spirit:user:auth:resend-activation" %}">{% trans "Resend activation email" %}</a>
-	</div>
+        <a class="login-link" href="{% url "spirit:user:auth:register" %}">{% trans "Create an account" %}</a>
+
+        <a class="login-link"
+           href="{% url "spirit:user:auth:password-reset" %}">{% trans "I don't know my password" %}</a>
+        <a class="login-link"
+           href="{% url "spirit:user:auth:resend-activation" %}">{% trans "Resend activation email" %}</a>
+    </div>
 
 {% endblock %}
