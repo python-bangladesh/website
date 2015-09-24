@@ -26,6 +26,21 @@
 		</ul>
 	</div>
 
+
+    <div class="profile-info">
+        <a href="{% url 'social:begin' 'facebook' %}">
+        <img height="50" width="50" src="http://icons.iconarchive.com/icons/danleech/simple/512/facebook-icon.png"/>
+    </a>
+
+    &nbsp;
+    &nbsp;
+
+    <a href="{% url 'social:begin' 'twitter' %}">
+        <img height="50" width="50" src="https://g.twimg.com/dev/documentation/image/Twitter_logo_blue_48.png"/>
+    </a>
+    </div>
+
+
     {% ifequal user.username p_user.username %}
         <div class="profile-preferences">
             <a class="button" href="{% url "spirit:user:update" %}"><i class="fa fa-cog"></i> {% trans "Preferences" %}</a>
