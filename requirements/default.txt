@@ -1,0 +1,65 @@
+# sha256: gmmWyB4cx3NQASTVwZIS5KdoGlXuFp-rkIXyswFacNg
+Django==1.8.4
+
+# sha256: JpmAry3cDn62C4UHt23JM3kXBCWjdjsaR9wmb2t2wXo
+django-djconfig==0.4.0
+
+# sha256: kEIE69kr2ZMy3yTqd1RWd1cnZOstq4qsgg8B4h2VTbI
+django-haystack==2.4.0
+
+# sha256: nfk5l6ddkD1DDwotaoL_c9OiaDInBotCcasTwAe6K24
+django-infinite-scroll-pagination==0.1.3
+
+# sha256: jphqr0WKr3jIfcMWCVzEqVHz7B1z-BsjcQcWH6PqStA
+django-mptt==0.7.4
+
+# sha256: fBFBCS2JSw4ZH9f61nHG8Fwx9qLK_DOFJwkWgK7GrLo
+django-spirit==0.4.2
+
+# sha256: BLF-xwdgOL6pr2K1RimES-uwx3k39BmkoIR4yg2j00s
+mistune==0.3.1
+
+# sha256: gRBAtkfl1WhvhNtBXv1pfmJQAIsRK2kJunesBZ4UDHQ
+MySQL-python==1.2.5
+
+# sha256: 70v-RmPKO5eplYYMAXO5Z-vZgDPQLzjJ4bLLtsGR2a0
+oauthlib==1.0.3
+
+# sha256: DxedfnXnyDtjQblZXKHzlN5wgUhKnjUq1m1VOhw9qik
+Pillow==2.9.0
+
+# sha256: cyCRkITm2sj0VAY4pGRHo71zD8oXKvwX0sA-7SLPT1E
+Pygments==2.0.2
+
+# sha256: 4bI4bPrVQURbHUPkgLAso37Fcln9GiPnlBW1e6XYppQ
+PyJWT==1.4.0
+
+# sha256: ksUcPs7IRsvsSu_xH5_0cwPUpj-TsOasDsAqCR_tcO8
+python-openid==2.2.5
+
+# sha256: HmDon7FS1LJNtwyTdCVRJ5rcb4E9BNgyi_fI4fHEV4g
+python-social-auth==0.2.12
+
+# sha256: Ae7RsiJtw4bY5Gei_4xPGqCMZdXX58Q6oJS9RdW9aLo
+pytz==2015.6
+
+# sha256: OYo9ttYYmdJf1KBsbKEgUbDOFx1wXezX7VURUXtLuT0
+requests==2.7.0
+
+# sha256: ZY2auoUzi-jB0VMsn7WAezgdxxZuRp_w9i_KpCQNnrg
+requests-oauthlib==0.5.0
+
+# sha256: 4kBSQR_E-9H2cmNVN8P8IzDZSBsYwDF2lbRiWVEskdU
+six==1.9.0
+
+# sha256: NM86_vpkgO_nBaT8Dq7q9_SXVK7DIro-iy8n3By89lA
+unicode-slugify==0.1.3
+
+# sha256: 8ZFQx03i_mhHsT7-6u5ALyvSwwmkRjRqi1uq4DFdEIo
+Unidecode==0.04.18
+
+# sha256: 74Mqv-3qfthrbq50ABKPiAU6HagaN8AGE7EnlUTVhao
+wheel==0.24.0
+
+# sha256: zfwOHFFzIHrHsxKv542D-1Us_tMEJ797PbqLHSbOqPc
+Whoosh==2.7.0
