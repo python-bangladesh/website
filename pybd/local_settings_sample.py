@@ -7,3 +7,6 @@ DATABASES = {
         'PASSWORD': '!s3Cr3t#'
     }
 }
+
+SLACK_TOKEN = "<TOKEN>"
+SLACK_SUB_DOMAIN = "pybd"

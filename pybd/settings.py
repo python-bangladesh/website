@@ -12,11 +12,9 @@ https://docs.djangoproject.com/en/1.8/ref/settings/
 
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
 import os
-
 from spirit.settings import *
 
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
-
 
 # Quick-start development settings - unsuitable for production
 # See https://docs.djangoproject.com/en/1.8/howto/deployment/checklist/
@@ -37,10 +35,7 @@ AUTHENTICATION_BACKENDS += [
 # Application definition
 
 INSTALLED_APPS += [
-    'home',
-    'mptt',
-    'dpaste',
-    'social.apps.django_app.default'
+    'home'
 ]
 
 MIDDLEWARE_CLASSES += (
@@ -58,7 +53,6 @@ ROOT_URLCONF = 'pybd.urls'
 
 WSGI_APPLICATION = 'pybd.wsgi.application'
 
-
 # Database
 # https://docs.djangoproject.com/en/1.8/ref/settings/#databases
 
@@ -75,23 +69,11 @@ USE_L10N = True
 
 USE_TZ = True
 
-
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/1.8/howto/static-files/
 
 STATIC_URL = '/static/'
 STATIC_ROOT = BASE_DIR + '/static/'
-
-DPASTE_BASE_URL = "http://pybd.org/pastes/"
-DPASTE_SITE_NAME = "PyBD Pastes"
-DPASTE_DEFAULT_GIST_NAME = "pybd.pastes.py"
-
-
-SOCIAL_AUTH_TWITTER_KEY = 'qAy6hpdfhO1gcCqgYovMUCni7'
-SOCIAL_AUTH_TWITTER_SECRET = 'b1VI1T4uicGQvir4k2XndjX6dbWWu8AlwDOeErZmq9KDHbc5rO'
-
-SOCIAL_AUTH_FACEBOOK_KEY = '1658783807701895'
-SOCIAL_AUTH_FACEBOOK_SECRET = 'b0ca13f7bb8709fa83e0ed57a3721c6f'
 
 try:
     from local_settings import *

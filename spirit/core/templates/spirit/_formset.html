@@ -1,6 +1,0 @@
-{{ formset.management_form }}
-{{ formset.non_form_errors }}
-
-{% for f in formset %}
-    {% include "spirit/_form.html" with form=f %}
-{% endfor %}
