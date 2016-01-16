@@ -7,6 +7,9 @@ import requests
 def home(request):
     return render(request, "home.html")
 
+def adda(request):
+    return render(request, "adda.html")
+
 
 def slack(request):
     view_data = {}
