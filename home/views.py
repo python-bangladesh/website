@@ -14,11 +14,14 @@ def adda(request):
 def slack(request):
     view_data = {}
 
+    subdomain = settings.SLACK_SUB_DOMAIN
+
+    view_data['subdomain'] = subdomain
+
     if request.method == "POST":
         email = request.POST.get('email')
         if email:
             token = settings.SLACK_TOKEN
-            subdomain = settings.SLACK_SUB_DOMAIN
             api_url = "https://{}.slack.com/api/users.admin.invite".format(subdomain)
             res = requests.post(api_url, {
                 'email': email,
