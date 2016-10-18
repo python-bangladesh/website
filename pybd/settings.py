@@ -78,4 +78,4 @@ STATIC_ROOT = BASE_DIR + '/static/'
 try:
     from local_settings import *
 except:
-    print "Valar Marghulis!"
+    print ("Valar Marghulis!")
